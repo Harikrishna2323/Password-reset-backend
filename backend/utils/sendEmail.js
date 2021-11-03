@@ -12,7 +12,7 @@ const sendEmail = async (options) => {
   });
   console.log(process.env.SMTP_USER, process.env.SMTP_PASSWORD);
   const message = {
-    from: `${process.env.SMTP_FROM_NAME}  <${process.env.SMTP_FROM}>`,
+    from: `${process.env.SMTP_USER}  <${process.env.SMTP_FROM}>`,
     to: options.email,
     subject: options.subject,
     text: options.message,
