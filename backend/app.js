@@ -13,7 +13,8 @@ const cookieParser = require("cookie-parser");
 
 const bodyParser = require("body-parser");
 
-const fileUpload = require("express-fileupload");
+if (process.env.NODE_ENV !== "PRODUCTION")
+  require("dotenv").config({ path: "/config.env" });
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
